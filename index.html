@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    
+    <!-- AlpineJS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.8.1/cdn.min.js" defer></script>
+
+<!-- Slider Component Container -->
+<div class="flex flex-col items-center justify-center mt-32" x-cloak x-data="appData()" x-init="appInit()">
+    <div class="flex flex-col">
+        <!-- Page Scroll Progress -->
+        <div class="fixed inset-x-0 top-0 z-50 h-0.5 mt-0.5
+            bg-blue-500" :style="`width: ${percent}%`"></div>
+
+        <!-- Navbar -->
+        <nav class="flex justify-around py-4 bg-white/80
+            backdrop-blur-md shadow-md w-full
+            fixed top-0 left-0 right-0 z-10">
+
+            <!-- Logo Container -->
+            <div class="flex items-center">
+                <!-- Logo -->
+                <a class="cursor-pointer">
+                    <h3 class="text-2xl font-medium text-blue-500">
+                        <img class="h-10 object-cover"
+                            src="https://stackoverflow.design/assets/img/logos/so/logo-styackoverflow.svg" alt="Pluto Servers">
+                    </h3>
+                </a>
+            </div>
+
+            <!-- Links Section -->
+            <div class="items-center hidden space-x-8 lg:flex">
+              <a class="flex text-gray-600 
+                    cursor-pointer transition-colors duration-300
+                    font-semibold text-blue-600">
+
+                    Home
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300">
+                    Store
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300">
+                    Knowledgebase
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300">
+                    Client Portal 
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300">
+                    Specs
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300">
+                    Legal
+                </a>
+            </div>
+
+            <!-- Icon Menu Section -->
+            <div class="flex items-center space-x-5">
+                <!-- Register -->
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300">
+
+                    <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M12 0L11.34 .03L15.15 3.84L16.5 2.5C19.75 4.07 22.09 7.24 22.45 11H23.95C23.44 4.84 18.29 0 12 0M12 4C10.07 4 8.5 5.57 8.5 7.5C8.5 9.43 10.07 11 12 11C13.93 11 15.5 9.43 15.5 7.5C15.5 5.57 13.93 4 12 4M12 6C12.83 6 13.5 6.67 13.5 7.5C13.5 8.33 12.83 9 12 9C11.17 9 10.5 8.33 10.5 7.5C10.5 6.67 11.17 6 12 6M.05 13C.56 19.16 5.71 24 12 24L12.66 23.97L8.85 20.16L7.5 21.5C4.25 19.94 1.91 16.76 1.55 13H.05M12 13C8.13 13 5 14.57 5 16.5V18H19V16.5C19 14.57 15.87 13 12 13M12 15C14.11 15 15.61 15.53 16.39 16H7.61C8.39 15.53 9.89 15 12 15Z" />
+                    </svg>
+
+                    Register
+                </a>
+
+                <!-- Login -->
+                <a class="flex text-gray-600 
+                    cursor-pointer transition-colors duration-300
+                    font-semibold text-blue-600">
+
+                    <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M10,17V14H3V10H10V7L15,12L10,17M10,2H19A2,2 0 0,1 21,4V20A2,2 0 0,1 19,22H10A2,2 0 0,1 8,20V18H10V20H19V4H10V6H8V4A2,2 0 0,1 10,2Z" />
+                    </svg>
+
+                    Login
+                </a>
+            </div>
+        </nav>
+    </div>
+
+      <body>
+          <div class="px-56 py-18 text-black-200" >
+            
+        
+            
+            <div class="grid grid-cols-6 gap-4">
+                <div class="col-start-1 col-end-3">
+                    <h1 class="text-6xl">Pluto Servers</h1>
+                    <p class="text-2xl">Afforable Servers</p>
+                </div>
+                <div class="col-end-8 col-span-3">
+                    <img height="60" width="300" src="server.png" alt="image">
+                </div>
+            </div>
+            
+            
+          </div>
+        <div>
+            <div class="justify-center flex underline underline-offset-8"> 
+                Pricing Plans
+        
+            </div>
+          <div class="grid grid-cols-6 gap-4 grid-rows-10" style="padding-top: 2em; height: 35em;">
+        
+            <div class="lg:col-start-3 md:col-span-2 md:col-start-2 lg:col-span-1 sm:col-span-1 sm:col-start-3 row-span-1">
+                <div class="h-screen flex  justify-center ">
+
+                    <card class="w-72 rounded-lg border shadow-md flex flex-col  bg-white" style="height: 30em;">
+                  <!-- Padding Can be added to this class using p-x, but it was removed -->
+                      <!-- Top Section -->
+                      <div class="flex flex-col items-center">
+                  
+                        <!-- Quota Name and Details -->
+                        <p class="mt-10 text-2xl font-light text-gray-700"> Game Hosting </p>
+                        <p class="mt-1 text-3xl font-light text-gray-700"> Budget </p>
+                  
+                        <!-- Button -->
+                        <sub class="mt-6">Starting at:</sub>
+                        <button class="mt-4 rounded py-2 px-4 bg-blue-500 text-white hover:bg-blue-700 hover:text-gray-50 text-sm">
+                          $1.00 / month
+                        </button>
+                  
+                        <!-- Additional Offer 
+                        <p class="mt-4 text-gray-700 text-sm font-light"> Or prepay anually </p>
+                        <p class="text-gray-800 text-sm font-light"> (save 17%): </p>
+                        <p class="mt-4 text-sm text-blue-600"> IDR 430,000 / month </p>
+                        -->
+                  
+                        <!-- Line -->
+                        <div class="h-0.5 bg-gray-200 w-full my-5"> </div>
+                  
+                      </div>
+                  
+                      <!-- Bottom Section -->
+                      <div class="flex flex-col px-3">
+                  
+                        <p class="text-gray-700 text-sm font-light"> Specifications: </p>
+                  
+                        <div class="grid grid-cols-5 mt-3 gap-y-2">
+                  
+                          <!-- Details 1 -->
+                          <div class="pl-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <div class="col-span-4 text-sm font-light text-gray-700">
+                            Xeon E5-2660 v3
+                          </div>
+                  
+                          <!-- Details 2 -->
+                          <div class="pl-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <div class="col-span-4 text-sm font-light text-gray-700">
+                            DDR4 Memory
+                          </div>
+                  
+                          <!-- Details 3 -->
+                          <div class="pl-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <div class="col-span-4 text-sm font-light text-gray-700">
+                            DDOS Protection
+                          </div>
+                  
+                         <!-- Details 4 -->
+                         <div class="pl-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <div class="col-span-4 text-sm font-light text-gray-700">
+                            Full support on discord server
+                          </div>
+                  
+                        </div>
+                  
+                      </div>
+                  
+                    </card>
+                  </div>
+              
+            </div>
+
+            <!-- New Pricing Card-->
+            <div class="lg:col-start-4 md:col-span-2 md:col-start-3 lg:col-span-1 sm:col-span-1 sm:col-start-4 row-span-1">
+              <div class="h-screen flex  justify-center ">
+
+                  <card class="w-72 rounded-lg border shadow-md flex flex-col  bg-white" style="height: 30em;">
+                <!-- Padding Can be added to this class using p-x, but it was removed -->
+                    <!-- Top Section -->
+                    <div class="flex flex-col items-center">
+                
+                      <!-- Quota Name and Details -->
+                      <p class="mt-10 text-2xl font-light text-gray-700"> Game Hosting </p>
+                      <p class="mt-1 text-3xl font-light text-gray-700"> Premium </p>
+                
+                      <!-- Button -->
+                      <sub class="mt-6">Starting at:</sub>
+                      <button class="mt-4 rounded py-2 px-4 bg-blue-500 text-white hover:bg-blue-700 hover:text-gray-50 text-sm">
+                        $1.25 / month
+                      </button>
+                
+                      <!-- Additional Offer 
+                      <p class="mt-4 text-gray-700 text-sm font-light"> Or prepay anually </p>
+                      <p class="text-gray-800 text-sm font-light"> (save 17%): </p>
+                      <p class="mt-4 text-sm text-blue-600"> IDR 430,000 / month </p>
+                      -->
+                
+                      <!-- Line -->
+                      <div class="h-0.5 bg-gray-200 w-full my-5"> </div>
+                
+                    </div>
+                
+                    <!-- Bottom Section -->
+                    <div class="flex flex-col px-3">
+                
+                      <p class="text-gray-700 text-sm font-light"> Specifications: </p>
+                
+                      <div class="grid grid-cols-5 mt-3 gap-y-2">
+                
+                        <!-- Details 1 -->
+                        <div class="pl-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <div class="col-span-4 text-sm font-light text-gray-700">
+                          Xeon E5-2660 v3
+                        </div>
+                
+                        <!-- Details 2 -->
+                        <div class="pl-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <div class="col-span-4 text-sm font-light text-gray-700">
+                          DDR4 Memory
+                        </div>
+                
+                        <!-- Details 3 -->
+                        <div class="pl-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <div class="col-span-4 text-sm font-light text-gray-700">
+                          DDOS Protection
+                        </div>
+                
+                       <!-- Details 4 -->
+                       <div class="pl-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <div class="col-span-4 text-sm font-light text-gray-700">
+                          Full support on discord server
+                        </div>
+                
+                      </div>
+                
+                    </div>
+                
+                  </card>
+                </div>
+            
+          </div>
+          <!-- End Pricing Card -->
+          
+          
+
+          </div>
+          
+          <h1 class="text-3xl">About Us</h1>
+          <hr class="mt-2">
+          <div class="grid grid-cols-3 grid-rows-10" >
+
+            <div class="lg:col-start-1 md:col-span-1 md:col-start-1 lg:col-span-1 sm:col-span-2 sm:col-start-1 ">
+              <h1 class="underline text-xl mt-2 underline-offset-4">Company</h1>
+                <img src="company.jpg" style="size:6px; padding-top: 0.5em; margin-left: -0.5em" class="h-48 w-72 rounded-3xl"> 
+                <p class="w-64 text-gray-900 pt-1" style="margin-left: -0.5 em;">
+                  Our company, Pluto Servers, was founded in 2019. We strive to offer affordable but powerful services to our clients. 
+                </p>
+            </div>
+
+            <div class="lg:col-start-2 md:col-span-1 md:col-start-2 lg:col-span-1 sm:col-span-2 sm:col-start-2 ">
+              <h1 class="underline text-xl mt-2 underline-offset-4">Hardware</h1>
+              <img src="hardware.jpg" style="size:6px; padding-top: 0.5em; margin-left: -0.5em" class="h-48 w-72 rounded-3xl"> 
+              <p class="w-64 text-gray-900 pt-1" style="margin-left: -0.5 em;">
+                 We self host most of our hardware and route our traffic through advanced DDOS protection. It helps keeps costs low without sacrificing security.
+              </p>
+            </div>
+
+            <div class="lg:col-start-3 md:col-span-1 md:col-start-3 lg:col-span-1 sm:col-span-2 sm:col-start-3 ">
+              <h1 class="underline text-xl mt-2 underline-offset-4">Location</h1>
+              <img src="ashburn.jpg" style="size:6px; padding-top: 0.5em; margin-left: -0.5em" class="h-48 w-72 rounded-3xl"> 
+              <p class="w-64 text-gray-900 pt-1" style="margin-left: -0.5 em;">
+                Our current locations for servers are only available at Ashburn, VA currently. However, we do plan to expand to other locations in the future. 
+              </p>
+            </div>
+        
+
+
+        </div>
+              
+            </div>
+      </body>
+      <!-- 
+        Starting Footer
+      -->
+
+
+</html>
+
+
+<style>
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 100px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+</style>
+
+<script>
+
+const appData = () => {
+        return {
+            percent: 0,
+
+            appInit() {
+                // source: https://codepen.io/A_kamel/pen/qBmmGKJ
+                window.addEventListener('scroll', () => {
+                    let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+                        height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+                    this.percent = Math.round((winScroll / height) * 100);
+                });
+            },
+        };
+    };
+</script>
